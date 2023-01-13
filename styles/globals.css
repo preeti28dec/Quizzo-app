@@ -6,20 +6,17 @@ body {
   max-width: 1400px;
   width: 100%;
   margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:  'Nunito', sans-serif;
 }
-:root{
-  --blueColor:#795cff;
-  --background:white;
-  --foreground:black;
-  --yellowColor:#ffc106;
-  --lightPurple:#f0edff;
+:root {
+  --blueColor: #795cff;
+  --background: white;
+  --foreground: black;
+  --yellowColor: #ffc106;
+  --lightPurple: #f0edff;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --background: black;
   --foreground: white;
 }
-
-

@@ -35,8 +35,8 @@ export default function CreateQuiz() {
         {quizTitlw.map((i) => {
           return (
             <div key={i.id}>
-              <img src={i.url} alt="loding image" className="h-[500px]" />
-              <div className="text-title text-2xl font-semibold text-center my-4">
+              <img src={i.url} alt="loding image" className="h-[400px]" />
+              <div className="text-title text-2xl font-bold text-center my-4">
                 {i.title}
               </div>
             </div>
@@ -65,7 +65,6 @@ const Root = styled.div`
     .text-title {
       font-size: 30px;
       line-height: 36px;
-      width: 350px;
       margin: auto;
     }
   }
