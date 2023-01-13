@@ -47,10 +47,10 @@ function ForgotPage() {
 
   return (
     <ForgotPage1>
-      <div>
-       <Link href='/login'> <HiOutlineArrowLeft className="text-[20px]" /></Link>
+      <div className="mx-4">
+       <Link href='/login'> <HiOutlineArrowLeft className="text-[20px] mt-6" /></Link>
         <div>
-          <h3 className="mt-6 text-[24px] font-semibold">
+          <h3 className="mt-6 text-[24px] font-bold">
             Create New Password 🔐
           </h3>
           <p className="mt-4 text-[15px]">
@@ -59,14 +59,13 @@ function ForgotPage() {
           </p>
 
           <div className="mt-6">
-            <p>Create a New Password</p>
+            <p className="font-bold">Create a New Password</p>
             <input
               className="input"
               type={passwordType}
               onChange={handlePasswordChange}
               value={passwordInput}
               name="password"
-              class="form-control"
               placeholder="Password"
             />
             <div className="eyeIcon" onClick={togglePassword}>
@@ -79,14 +78,13 @@ function ForgotPage() {
           </div>
 
           <div className="mt-6">
-            <p>Confirm a New Password</p>
+            <p className="font-bold">Confirm a New Password</p>
             <input
               className="input"
               type={cpasswordType}
               onChange={handleCPasswordChange}
               value={cpasswordInput}
               name="password"
-              class="form-control"
               placeholder="Password"
             />
             <div className="eyeIcon" onClick={toggleCPassword}>
@@ -117,7 +115,7 @@ function ForgotPage() {
         </div>
         {openModel ? (
           <>
-            <div className="left-0 h-[100%] absolute z-10 w-[100%] top-0 bg-[#000000ad]">
+            <div  onClick={() => setOpenModel((s) => !s)} className="left-0 h-[100%] absolute z-10 w-[100%] top-0 bg-[#000000ad]">
               <div className=" bg-white p-4 modelBox zoom-in-zoom-out">
                 <div className="border rounded-full w-24 h-24 p-4 bg-[#795cff] mx-auto">
                   <div className="bg-white rounded-md mt-4 m-auto  w-8 h-8 ">
@@ -158,13 +156,13 @@ const ForgotPage1 = styled.div`
   .modelBox {
     position: absolute;
     border-radius: 20px;
-    left: 20%;
-    top: 20%;
+    left: 15%;
+    top: 30%;
     transform: translate(-50% -50%);
   }
   .zoom-in-zoom-out {
-    width: 60%;
-    height: 50%;
+    width: 70%;
+    height: 40%;
     animation: zoom-in-zoom-out 2s ease-out infinite;
   }
   /* infinite */
@@ -183,10 +181,10 @@ const ForgotPage1 = styled.div`
   .sign-up {
     background-color: var(--blueColor);
     box-shadow: #543acc 0px 5px 0px;
-    margin: 55px 20px;
+    margin: 40px 20px;
     border-radius: 50px;
-    padding: 10px;
-    color: var(--whiteColor);
+    padding: 15px;
+    color: var(--background);
     text-align: center;
     font-weight: 600;
   }

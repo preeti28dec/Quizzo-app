@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <Root>
-      <div className="p-4 h-16">
+      <div className="px-4 py-8 h-16">
         <div className="flex gap-8 items-center">
           <BsArrowLeft className="text-2xl" />
           <div className="meter">

@@ -36,10 +36,10 @@ export default function ProfileDetail() {
       <LoginPage1>
         <div>
           <div>
-            <div className="m-4 text-2xl text-center font-semibold">
-              Create an account
+            <div className="m-4 text-2xl text-center font-bold">
+              Create an account ✏️
             </div>
-            <div className="text-sm py-2 text-[#212121] text-center">
+            <div className="mx-4 py-2 text-[#212121] text-center">
               Please complete your profile. Don't worry, your data will remain
               private and only you can see it.
             </div>
@@ -60,18 +60,17 @@ export default function ProfileDetail() {
             </div>
             <div className="mt-6">
               <p className="font-bold text-sm">Date of Birth</p>
-              <div className="relative">
-                <input
-                  className="input"
-                  id="dob"
-                  name="dob"
-                  value={DOB}
-                  onChange={(e) => setDOB(e.target.value)}
-                  type="text"
-                  placeholder="enter your Name"
-                />
-                <FaCalendarAlt className=" absolute top-0 right-0 mt-4 text-[#543acc]" />
-              </div>
+
+              <input
+                className="input"
+                id="dob"
+                name="dob"
+                value={DOB}
+                onChange={(e) => setDOB(e.target.value)}
+                type="date"
+                placeholder="enter your Name"
+              />
+
               {error && <h2 style={{ color: "red" }}>{error}</h2>}
             </div>
             <div className="mt-6">
@@ -122,7 +121,7 @@ export default function ProfileDetail() {
           </div>
           <hr className="mt-6" />
           <div className="sign-up" onClick={() => setProgress("100%")}>
-            <button>Sign In</button>
+            <button>Continue</button>
           </div>
         </div>
       </LoginPage1>
@@ -136,7 +135,7 @@ const LoginPage1 = styled.div`
     box-shadow: #543acc 0px 5px 0px;
     margin: 40px 20px;
     border-radius: 50px;
-    padding: 10px;
+    padding: 15px;
     color: var(--background);
     text-align: center;
     font-weight: 600;
@@ -153,8 +152,14 @@ const LoginPage1 = styled.div`
     border-right: none;
     width: 100%;
     outline: none;
+    font-weight: 700;
   }
-
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    filter: invert(1);
+    background-color: yellowgreen;
+  }
   .eyeIcon {
     position: absolute;
     z-index: 10;

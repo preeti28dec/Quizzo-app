@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function SkipButton() {
   return (
     <Root>
-    <hr/>
+    <hr className='py-2'/>
       <div className="skipButton">
         <button>Skip</button>
       </div>
@@ -17,7 +17,7 @@ const Root = styled.div`
     box-shadow: #c4b7ff 0px 5px 0px;
     margin: 25px 20px;
     border-radius: 50px;
-    padding: 10px 12px;
+    padding: 15px 12px;
     color: #6949ff;
     text-align: center;
     font-weight: 600;

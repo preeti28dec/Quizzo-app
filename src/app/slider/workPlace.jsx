@@ -42,13 +42,13 @@ export default function WorkPlace() {
   return (
     <Root>
       <Header />
-      <div className="m-4 text-2xl text-center font-semibold">
-        Describe a workplace that suits you
+      <div className="mx-4 mb-4 mt-8 text-2xl text-center font-bold">
+        Describe a workplace that suits you 💼
       </div>
-      <div className="text-sm py-2 text-[#212121] text-center">
+      <div className="text-sm font-semibold py-2 text-[#212121] text-center">
         You can skip it if you're not sure.
       </div>
-      <div>
+      <div className="mb-8">
         {Typedata.map((i) => {
           return (
             <Link href="/slider" key={i.id}>
@@ -64,7 +64,7 @@ export default function WorkPlace() {
                       {i.icon}
                     </div>
                   </div>
-                  <div className="font-semibold text-lg">{i.name}</div>
+                  <div className="font-bold text-lg">{i.name}</div>
                 </div>
               </div>
             </Link>

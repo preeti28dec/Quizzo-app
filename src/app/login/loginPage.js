@@ -39,17 +39,17 @@ export default function LoginPage() {
 
   return (
     <LoginPage1>
-      <div>
-        <HiOutlineArrowLeft className="text-[20px]" />
+      <div className="mx-4">
+        <HiOutlineArrowLeft className="mt-6 text-[20px]" />
         <div>
-          <h3 className="mt-6 text-[24px] font-semibold">Hello there 👋</h3>
+          <h3 className="mt-6 text-[24px] font-bold">Hello there 👋</h3>
         </div>
         <div className="mt-10">
-          <p>Email</p>
+          <p className="font-semibold">Email</p>
           <input
             className="input"
-            id="message"
-            name="message"
+            id="Email"
+            name="Email"
             value={message}
             onChange={handleChange}
             type="text"
@@ -58,14 +58,13 @@ export default function LoginPage() {
           {error && <h2 style={{ color: "red" }}>{error}</h2>}
         </div>
         <div className="mt-6">
-          <p>Password</p>
+          <p className=" font-semibold">Password</p>
           <input
             className="input"
             type={passwordType}
             onChange={handlePasswordChange}
             value={passwordInput}
             name="password"
-            class="form-control"
             placeholder="Password"
           />
           <div className="eyeIcon" onClick={togglePassword}>
@@ -78,7 +77,7 @@ export default function LoginPage() {
         </div>
         <div className="flex gap-2 items-center mt-4">
           <input className="checkbox" type="checkbox" />
-          <p>Remember me</p>
+          <p className="font-bold">Remember me</p>
         </div>
         <hr className="mt-6" />
         <Link href="./login/forgot">
@@ -100,8 +99,8 @@ const LoginPage1 = styled.div`
     box-shadow: #543acc 0px 5px 0px;
     margin: 55px 20px;
     border-radius: 50px;
-    padding: 10px;
-    color: var(--whiteColor);
+    padding: 15px;
+    color: var(--background);
     text-align: center;
     font-weight: 600;
   }
@@ -117,6 +116,7 @@ const LoginPage1 = styled.div`
     border-right: none;
     width: 100%;
     outline: none;
+    font-weight: 700;
   }
   p {
     font-size: 14px;
