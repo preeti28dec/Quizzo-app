@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
 import Card from "./Card";
+import Link from "next/link";
 const card = [
   {
     id: 1,
@@ -58,10 +59,12 @@ export default function Discover() {
     <Root>
       <div className="flex justify-between items-center px-4">
         <div className="text-2xl font-bold">Discover</div>
-        <div className="text-[#6949ff] flex items-center gap-3 text-xl font-semibold">
+       <Link href="/discover" className="cursor-pointer">
+       <div className="text-[#6949ff] flex items-center gap-3 text-xl font-semibold">
           <div>View all</div>
           <BsArrowRight />
         </div>
+       </Link>
       </div>
 
       <div className="hs ml-4 full no-scrollbar sm:flex sm:justify-center sm:gap-4 ">

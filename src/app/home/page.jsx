@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import Footer from "../footer";
@@ -18,9 +19,11 @@ export default function Home() {
           <div className="text-2xl ">
             Play quiz together with your friends now!
           </div>
-          <button className="text-[#7c60ff] bg-white rounded-full my-4 px-4 py-2">
-            Find Friends
-          </button>
+          <Link href="/find-friend">
+            <button className="text-[#7c60ff] bg-white rounded-full my-4 px-4 py-2">
+              Find Friends
+            </button>
+          </Link>
         </div>
         <div className="relative">
           <div className="border-white absolute top-[60px] right-[100px] border-2 rounded-full w-[45px] h-[45px] overflow-hidden">
