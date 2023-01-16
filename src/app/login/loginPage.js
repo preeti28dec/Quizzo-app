@@ -85,9 +85,11 @@ export default function LoginPage() {
             Forgot Password?
           </div>
         </Link>
-        <div className="sign-up">
-          <button>Sign In</button>
-        </div>
+        <Link href="/home">
+          <div className="sign-up">
+            <button>Sign In</button>
+          </div>
+        </Link>
       </div>
     </LoginPage1>
   );

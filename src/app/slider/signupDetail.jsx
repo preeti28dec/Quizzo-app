@@ -1,6 +1,6 @@
 "use client";
 import { useProgress } from "../../context/context";
-import Header from "../header";
+import Header from "../header/header";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FcGoogle } from "react-icons/fc";
@@ -80,7 +80,7 @@ export default function SignupDetail() {
               {error && <h2 style={{ color: "red" }}>{error}</h2>}
             </div>
             <div className="mt-6">
-              <p>Email</p>
+              <p  className="font-bold text-sm">Email</p>
               <input
                 className="input"
                 id="message"
@@ -93,7 +93,7 @@ export default function SignupDetail() {
               {error && <h2 style={{ color: "red" }}>{error}</h2>}
             </div>
             <div className="mt-6">
-              <p>Password</p>
+              <p  className="font-bold text-sm">Password</p>
               <input
                 className="input"
                 type={passwordType}
@@ -214,7 +214,7 @@ const LoginPage1 = styled.div`
   }
   .input {
     border: 2px solid var(--blueColor);
-    padding: 10px;
+    padding: 10px 5px ;
     border-top: none;
     border-left: none;
     border-right: none;

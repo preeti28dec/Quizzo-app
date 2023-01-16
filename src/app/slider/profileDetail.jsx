@@ -1,6 +1,6 @@
 "use client";
 import { useProgress } from "../../context/context";
-import Header from "../header";
+import Header from "../header/header";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BsChevronDown } from "react-icons/bs";
@@ -32,7 +32,7 @@ export default function ProfileDetail() {
 
   return (
     <>
-      <Header />
+      <Header/>
       <LoginPage1>
         <div>
           <div>

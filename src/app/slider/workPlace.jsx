@@ -5,7 +5,7 @@ import { FaBriefcase, FaCheckSquare } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
 import { IoDocumentText } from "react-icons/io5";
 import { useProgress } from "../../context/context";
-import Header from "../header";
+import Header from "../header/header";
 import Link from "next/link";
 const Typedata = [
   {

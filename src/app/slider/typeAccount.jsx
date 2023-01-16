@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SkipButton from "../../componets/button/skipButton";
 import { FaBriefcase, FaUserFriends, FaUser } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
-import Header from "../header";
+import Header from "../header/header";
 import Link from "next/link";
 import { useProgress } from "../../context/context";
 const Typedata = [
