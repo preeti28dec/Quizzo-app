@@ -9,11 +9,30 @@ import Collections from "./collections/page";
 import Discover from "./discover/page";
 import TopPicks from "./picks/page";
 import TrendingQuiz from "./quiz/page";
+import { FiSearch } from "react-icons/fi";
+import { IoNotificationsOutline } from "react-icons/io5";
 
 export default function Home() {
   return (
     <Root>
-      <MainHeader />
+      <MainHeader
+        title={
+          <div className="flex justify-between items-center ">
+            <div className="flex gap-2 ">
+              <img
+                src="./logo.png"
+                alt="loding logo"
+                className="w-8 h-8 object-contain"
+              />
+              <div className="text-2xl font-bold text-center ">Quizzo</div>
+            </div>
+            <div className="flex items-center gap-2 text-2xl">
+              <FiSearch />
+              <IoNotificationsOutline />
+            </div>
+          </div>
+        }
+      />
       <div className="find_user_card">
         <div>
           <div className="text-2xl ">

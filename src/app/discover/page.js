@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import { BsArrowLeft } from "react-icons/bs";
-import { FaSearch } from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
 import styled from "styled-components";
 import Link from "next/link";
 import DiscoverCard from "./card";
+import MainHeader from "../header/mainHeader";
 
 const Item = [
   {
@@ -53,7 +54,7 @@ const Item = [
     month: "2 months ago",
   },
   {
-    image:"../assest/calendar.jpg",
+    image: "../assest/calendar.jpg",
     name: "Titus Kitamura",
     heading: "Great Idea Come from",
     time: "16 Qs",
@@ -69,26 +70,29 @@ const Item = [
     avtar: "../assest/image5.jpg",
     play: "5.6K plays",
     month: "2 months ago",
-  }
+  },
 ];
 
 function DiscoverItems() {
   return (
     <DiscoverItems1>
-      <div className="flex justify-between items-center gap-4">
-        <div className="flex items-center gap-6">
-          <Link href="/">
-            <div>
-              <BsArrowLeft className="text-2xl" />
+      <MainHeader
+        title={
+          <div className="flex justify-between items-center gap-4 py-2">
+            <div className="flex items-center gap-2">
+              <Link href="/home">
+                <div>
+                  <BsArrowLeft className="text-2xl" />
+                </div>
+              </Link>
+              <div className="font-bold text-[20px]">Discover</div>
             </div>
-          </Link>
-          <div className="font-bold text-[20px]">Discover</div>
-        </div>
-        <div>
-          <FaSearch />
-        </div>
-      </div>
-      <div>
+            <FiSearch className="text-xl" />
+          </div>
+        }
+      />
+
+      <div className="px-4">
         {Item.map((i) => {
           return <DiscoverCard value={i} key={i.name} />;
         })}
@@ -98,6 +102,4 @@ function DiscoverItems() {
 }
 
 export default DiscoverItems;
-const DiscoverItems1 = styled.div`
-  padding: 1rem;
-`;
+const DiscoverItems1 = styled.div``;

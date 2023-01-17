@@ -1,19 +1,25 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
 
 function CollectionCard({ value }) {
+  const router = useRouter();
   return (
-    <CollectionCard1>
-      <div className="image">
-        <img className="rounded-lg image " src={value.image} alt="logo" />
-      </div>
-      <div className="absolute -mt-10 text-white font-bold ml-4">
+    <Root
+      onClick={() => {
+        router.push(`${value.link_}?id=${value.id}`);
+      }}
+    >
+      <img className="rounded-lg h-[120px] w-[200px]" src={value.image} alt="logo" />
+      <div className="absolute -mt-8 text-white font-bold ml-2">
         {value.heading}
       </div>
-    </CollectionCard1>
+    </Root>
   );
 }
 
 export default CollectionCard;
-const CollectionCard1 = styled.div``;
+const Root = styled.div`
+  position: relative;
+`;

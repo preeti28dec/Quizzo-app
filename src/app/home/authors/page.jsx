@@ -1,13 +1,14 @@
-"use client"
+"use client";
 import React from "react";
 import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
 import Card from "./Card";
+import Link from "next/link";
 const card = [
   {
     id: 1,
     url: "./assest/calendar.jpg",
-    time:"16 Qs",
+    time: "16 Qs",
     name: "Rayford ",
     desc: "Get Smarter With Productivity Quizz...",
     userUrl: "./assest/image1.jpg",
@@ -15,7 +16,7 @@ const card = [
   {
     id: 2,
     url: "./assest/idea-hand.jpg",
-    time:"16 Qs",
+    time: "16 Qs",
     name: "Willard ",
     desc: "Get Smarter With Productivity Quizz...",
     userUrl: "./assest/image2.jpg",
@@ -23,7 +24,7 @@ const card = [
   {
     id: 3,
     url: "./assest/calendar.jpg",
-    time:"16 Qs",
+    time: "16 Qs",
     name: "Hannah ",
     desc: "Get Smarter With Productivity Quizz...",
     userUrl: "./assest/image3.jpg",
@@ -31,7 +32,7 @@ const card = [
   {
     id: 4,
     url: "./assest/idea-hand.jpg",
-    time:"16 Qs",
+    time: "16 Qs",
     name: "Geiffrey ",
     desc: "Get Smarter With Productivity Quizz...",
     userUrl: "./assest/image4.jpg",
@@ -39,7 +40,7 @@ const card = [
   {
     id: 5,
     url: "./assest/idea-hand.jpg",
-    time:"16 Qs",
+    time: "16 Qs",
     name: "Titus ",
     desc: "Get Smarter With Productivity Quizz...",
     userUrl: "./assest/image5.jpg",
@@ -47,7 +48,7 @@ const card = [
   {
     id: 6,
     url: "./assest/idea-hand.jpg",
-    time:"16 Qs",
+    time: "16 Qs",
     name: "Titus ",
     desc: "Get Smarter With Productivity Quizz...",
     userUrl: "./assest/image6.jpg",
@@ -58,10 +59,12 @@ export default function Authors() {
     <Root>
       <div className="flex justify-between items-center px-4">
         <div className="text-2xl font-bold">Top Authors</div>
-        <div className="text-[#6949ff] flex items-center gap-3 text-xl font-semibold">
-          <div>View all</div>
-          <BsArrowRight />
-        </div>
+        <Link href="/authors">
+          <div className="text-[#6949ff] flex items-center gap-3 text-xl font-semibold">
+            <div>View all</div>
+            <BsArrowRight />
+          </div>
+        </Link>
       </div>
 
       <div className="hs ml-4 full no-scrollbar sm:flex sm:justify-center sm:gap-4 ">
@@ -73,7 +76,6 @@ export default function Authors() {
   );
 }
 const Root = styled.div`
-
   .no-scrollbar {
     scrollbar-width: none;
     margin-bottom: 0;
