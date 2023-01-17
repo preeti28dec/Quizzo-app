@@ -1,5 +1,5 @@
+'use client'
 import React from "react";
-import { FaSearch } from "react-icons/fa";
 import { BsArrowLeft } from "react-icons/bs";
 import Link from "next/link";
 import CollectionCard from "./card";

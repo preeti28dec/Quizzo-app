@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { HiOutlineUser, HiOutlineSquares2X2 } from "react-icons/hi2";
 import { BsPlusSquare } from "react-icons/bs";

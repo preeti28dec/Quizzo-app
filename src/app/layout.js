@@ -1,3 +1,4 @@
+'use client'
 import "../../styles/globals.css";
 import ContextData from "../context/context";
 export default function Layout({ children }) {
