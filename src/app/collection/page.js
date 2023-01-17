@@ -6,7 +6,7 @@ import CollectionCard from "./card";
 import MainHeader from "../header/mainHeader";
 import { FiSearch } from "react-icons/fi";
 import { CollectionData } from "../../utils/data";
-function Collections() {
+export default function Collections() {
   return (
     <div>
       <MainHeader
@@ -34,4 +34,3 @@ function Collections() {
   );
 }
 
-export default Collections;
