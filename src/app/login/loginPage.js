@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { HiOutlineArrowLeft } from "react-icons/hi";
+import BlueButton from "../../componets/button/BlueButton";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
 
@@ -86,9 +87,9 @@ export default function LoginPage() {
           </div>
         </Link>
         <Link href="/home">
-          <div className="sign-up">
+          <BlueButton>
             <button>Sign In</button>
-          </div>
+          </BlueButton>
         </Link>
       </div>
     </LoginPage1>
@@ -102,7 +103,7 @@ const LoginPage1 = styled.div`
     margin: 55px 20px;
     border-radius: 50px;
     padding: 15px;
-    color: var(--background);
+    color: var(--whiteColor);
     text-align: center;
     font-weight: 600;
   }

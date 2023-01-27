@@ -3,9 +3,11 @@ import { useProgress } from "../../context/context";
 import Header from "../header/header";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { BsChevronDown } from "react-icons/bs";
+import { BsArrowLeft, BsChevronDown } from "react-icons/bs";
 import { FaCalendarAlt } from "react-icons/fa";
 import Link from "next/link";
+import DarkButton from "../../componets/button/DarkButton";
+import BlueButton from "../../componets/button/BlueButton";
 
 export default function ProfileDetail() {
   const { setProgress } = useProgress();
@@ -32,7 +34,7 @@ export default function ProfileDetail() {
 
   return (
     <>
-      <Header/>
+      <Header title={<BsArrowLeft className="text-2xl" />} />
       <LoginPage1>
         <div>
           <div>
@@ -40,7 +42,7 @@ export default function ProfileDetail() {
               Create an account ✏️
             </div>
             <div className="mx-4 py-2 text-[#212121] text-center">
-              Please complete your profile. Don't worry, your data will remain
+              Please complete your profile. Do not worry, your data will remain
               private and only you can see it.
             </div>
           </div>
@@ -120,9 +122,9 @@ export default function ProfileDetail() {
             </div>
           </div>
           <hr className="mt-6" />
-          <div className="sign-up" onClick={() => setProgress("100%")}>
-            <button>Continue</button>
-          </div>
+          <BlueButton>
+            <button onClick={() => setProgress("100%")}>Continue</button>
+          </BlueButton>
         </div>
       </LoginPage1>
     </>
@@ -130,16 +132,6 @@ export default function ProfileDetail() {
 }
 
 const LoginPage1 = styled.div`
-  .sign-up {
-    background-color: var(--blueColor);
-    box-shadow: #543acc 0px 5px 0px;
-    margin: 40px 20px;
-    border-radius: 50px;
-    padding: 15px;
-    color: var(--background);
-    text-align: center;
-    font-weight: 600;
-  }
 
   input[type="checkbox"] {
     accent-color: var(--blueColor);

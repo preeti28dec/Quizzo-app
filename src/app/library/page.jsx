@@ -8,20 +8,24 @@ import Quizzo from "./Quizzo";
 import Favorites from "./Favorites";
 import Link from "next/link";
 import { CollectionData, FavoritesItem, QuizzoItem } from "../../utils/data";
+import Image from "next/image";
+import styled from "styled-components";
 
 export default function Library() {
   const [tab, setTab] = useState("Quizzo");
   return (
-    <div>
+    <Library1>
       <MainHeader
         title={
           <div className="flex justify-between items-center ">
             <Link href="/home">
               <div className="flex gap-2 ">
-                <img
-                  src="./logo.png"
-                  alt="loding logo"
+                <Image
+                  src="/logo.png"
                   className="w-8 h-8 object-contain"
+                  alt="loding logo"
+                  width={500}
+                  height={500}
                 />
                 <div className="text-2xl font-bold text-center ">Library</div>
               </div>
@@ -33,13 +37,13 @@ export default function Library() {
         }
       />
       <div className="px-4">
-        <div className="flex items-center justify-between mb-4 ">
+        <div className="grid grid-cols-3 mb-4 ">
           <button
             onClick={() => setTab("Quizzo")}
             className={
               tab == "Quizzo"
-                ? "border-b border-[#6949ff] py-2 font-bold  text-[#6949ff]"
-                : " text-[#9e9e9e]  py-2 px-4 border-b font-bold border-[#9e9e9e]"
+                ? "border-b-2 border-[#6949ff] py-2 font-bold  text-[#6949ff]"
+                : " text-[#9e9e9e]  py-2 px-4 border-b-2 font-bold border-[#9e9e9e]"
             }
           >
             My Quizzo
@@ -48,8 +52,8 @@ export default function Library() {
             onClick={() => setTab("Favorite")}
             className={
               tab == "Favorite"
-                ? "border-b border-[#6949ff] py-2 font-bold  text-[#6949ff]"
-                : " text-[#9e9e9e]  py-2 px-4 border-b font-bold border-[#9e9e9e]"
+                ? "border-b-2 border-[#6949ff] py-2 font-bold  text-[#6949ff]"
+                : " text-[#9e9e9e]  py-2 px-4 border-b-2 font-bold border-[#9e9e9e]"
             }
           >
             Favorite
@@ -58,8 +62,8 @@ export default function Library() {
             onClick={() => setTab("Collection")}
             className={
               tab == "Collection"
-                ? " border-b border-[#6949ff] py-2 font-bold text-[#6949ff]"
-                : " text-[#9e9e9e]  py-2 px-4 border-b font-bold border-[#9e9e9e]"
+                ? " border-b-2 border-[#6949ff] py-2 font-bold text-[#6949ff]"
+                : " text-[#9e9e9e]  py-2 px-4 border-b-2 font-bold border-[#9e9e9e]"
             }
           >
             Collection
@@ -120,6 +124,9 @@ export default function Library() {
           </>
         ) : null}
       </div>
-    </div>
+    </Library1>
   );
 }
+const Library1 = styled.div`
+padding-bottom: 50px;
+`

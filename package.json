@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "quizzo-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,7 @@
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.13",
     "babel-plugin-styled-components": "latest",
     "eslint": "8.31.0",

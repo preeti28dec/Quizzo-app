@@ -1,19 +1,22 @@
-"use client"
-import React, { useState } from "react";
-import Link from "next/link";
+"use client";
+import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 export default function Card({ value }) {
   return (
     <Root className="border">
       <div className="relative">
-        <img
-          src={value.url}
+        <Image
+          src={value.image}
           alt="loding imag"
           className="h-36 object-cover w-full"
+          width={500}
+          height={500}
+          priority={true}
         />
         <div className="absolute top-[105px] left-1 font-bold text-xl text-white px-2 py-1 rounded-lg">
-          {value.name}
+          {value.heading}
         </div>
       </div>
     </Root>

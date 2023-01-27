@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BsImageFill } from "react-icons/bs";
@@ -25,7 +26,7 @@ function ImageCollection() {
       <div></div>
 
       <div className="border-2 mt-10 border-[#8166ff] overflow-hidden  rounded-2xl h-60 relative">
-        <label onChange={handelFile} htmlFor="formId" >
+        <label onChange={handelFile} htmlFor="formId">
           <input type="file" id="formId" hidden />
           <div className="text-[#8166ff] text-[30px] flex justify-center mt-24">
             <BsImageFill onChange={handelFile} />
@@ -34,8 +35,13 @@ function ImageCollection() {
             Add Cover Image
           </p>
         </label>
-
-        <img className="h-60 card-image" src={file} />
+        <Image
+          src={file}
+          className="h-60 card-image"
+          alt="1loding image"
+          width={500}
+          height={500}
+        />
       </div>
 
       <div className="mt-10">
@@ -83,7 +89,7 @@ const ImageCollection1 = styled.div`
     margin: 55px 20px;
     border-radius: 50px;
     padding: 10px;
-    color: var(--whiteColor);
+    color: var(----whiteColor);
     text-align: center;
     font-weight: 600;
   }

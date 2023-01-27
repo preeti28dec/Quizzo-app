@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import {
   BsArrowLeft,
-  BsCheckLg,
   BsFacebook,
   BsFillPatchCheckFill,
   BsReddit,
@@ -20,85 +19,9 @@ import Link from "next/link";
 import styled from "styled-components";
 import CollectionCard from "./CollectionCard";
 import Quizzo from "./Quizzo";
-const QuizzoItem = [
-  {
-    image: "../assest/calendar.jpg",
-    name: "Titus Kitamura",
-    heading: "Get Smarter with Products",
-    time: "16 Qs",
-    avtar: "../assest/image1.jpg",
-    play: "5.6K plays",
-    month: "2 months ago",
-  },
-  {
-    image: "../assest/idea-hand.jpg",
-    name: "Titus Kitamura",
-    heading: "Great Idea Come from",
-    time: "16 Qs",
-    avtar: "../assest/image2.jpg",
-    play: "5.6K plays",
-    month: "2 months ago",
-  },
-  {
-    image: "../assest/calendar.jpg",
-    name: "Titus Kitamura",
-    heading: "Having Fun & Always from",
-    time: "16 Qs",
-    avtar: "../assest/image5.jpg",
-    play: "5.6K plays",
-    month: "2 months ago",
-  },
-  {
-    image: "../assest/calendar.jpg",
-    name: "Titus Kitamura",
-    heading: "Can you Imagine, world",
-    time: "16 Qs",
-    avtar: "../assest/image6.jpg",
-    play: "5.6K plays",
-    month: "2 months ago",
-  },
-  {
-    image: "../assest/calendar.jpg",
-    name: "Titus Kitamura",
-    heading: "Get Smarter with Products",
-    time: "16 Qs",
-    avtar: "../assest/image1.jpg",
-    play: "5.6K plays",
-    month: "2 months ago",
-  },
-  {
-    image: "../assest/calendar.jpg",
-    name: "Titus Kitamura",
-    heading: "Great Idea Come from",
-    time: "16 Qs",
-    avtar: "../assest/image2.jpg",
-    play: "5.6K plays",
-    month: "2 months ago",
-  },
-  {
-    image: "../assest/calendar.jpg",
-    name: "Titus Kitamura",
-    heading: "Having Fun & Always From",
-    time: "16 Qs",
-    avtar: "../assest/image5.jpg",
-    play: "5.6K plays",
-    month: "2 months ago",
-  },
-];
-const CollectionItems = [
-  { id: 1, image: "../assest/education.jpg", heading: "Education" },
-  { id: 2, image: "../assest/car-img.jpg", heading: "Education" },
-  { id: 3, image: "../assest/education.jpg", heading: "Education" },
-  { id: 4, image: "../assest/car-img.jpg", heading: "Education" },
-  { id: 5, image: "../assest/education.jpg", heading: "Education" },
-  { id: 6, image: "../assest/car-img.jpg", heading: "Education" },
-  { id: 7, image: "../assest/education.jpg", heading: "Education" },
-  { id: 8, image: "../assest/car-img.jpg", heading: "Education" },
-  { id: 9, image: "../assest/education.jpg", heading: "Education" },
-  { id: 10, image: "../assest/car-img.jpg", heading: "Education" },
-  { id: 11, image: "../assest/education.jpg", heading: "Education" },
-  { id: 12, image: "../assest/car-img.jpg", heading: "Education" },
-];
+import Image from "next/image";
+import { CollectionData, DiscoverItemList } from "../../utils/data";
+
 export default function Profile() {
   const [tab, setTab] = useState("Quizzo");
   const [openModel, setOpenModel] = useState(false);
@@ -107,11 +30,11 @@ export default function Profile() {
       <MainHeader
         title={
           <div className="flex py-2 items-center justify-between gap-2 text-2xl">
-            <Link href="/home">
+            <Link href="/authors">
               <BsArrowLeft />
             </Link>
             <div className="flex items-center gap-4">
-              <FiSend onClick={() => setOpenModel((s) => !s)}/>
+              <FiSend onClick={() => setOpenModel((s) => !s)} />
               <AiOutlineMessage />
             </div>
           </div>
@@ -119,19 +42,23 @@ export default function Profile() {
       />
       <div className="px-4">
         <div className=" h-[120px]  overflow-hidden rounded-2xl">
-          <img
-            src="./assest/car-img.jpg"
-            alt="loding image"
+          <Image
+            src="/assest/car-img.jpg"
+            alt="loding imag"
             className="aspect-auto"
+            width={500}
+            height={500}
           />
         </div>
 
         <div className="flex justify-between items-center my-4 ">
           <div className="flex gap-2 items-center ">
-            <img
-              src="../assest/image1.jpg"
+            <Image
+              src="/assest/image1.jpg"
               alt="loding imag"
               className="rounded-full w-14 object-cover "
+              width={500}
+              height={500}
             />
             <div className="flex  gap-1 ">
               <div>
@@ -230,14 +157,15 @@ export default function Profile() {
               </div>
             </div>
             <div className="my-4">
-              {QuizzoItem.map((i) => {
+              {DiscoverItemList.map((i) => {
                 return <Quizzo value={i} key={i.name} />;
               })}
             </div>
           </>
-        ) : tab === "Collections" ? (
+        ) : null}
+        {tab === "Collections" ? (
           <>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center my-4">
               <div className="font-bold text-xl">265 Collections</div>
               <div className="flex gap-2 items-center text-[#6949ff]">
                 <div>Newest</div>
@@ -247,12 +175,13 @@ export default function Profile() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-5  mb-4">
-              {CollectionItems.map((i) => {
+              {CollectionData.map((i) => {
                 return <CollectionCard value={i} key={i.id} />;
               })}
             </div>
           </>
-        ) : tab === "About" ? (
+        ) : null}
+        {tab === "About" ? (
           <>
             <div className="flex justify-between items-center">
               <div className="font-bold text-xl">265 about</div>
@@ -284,7 +213,6 @@ export default function Profile() {
           </>
         ) : null}
       </div>
-
       <div>
         {openModel ? (
           <>
@@ -343,4 +271,6 @@ export default function Profile() {
   );
 }
 
-const Root = styled.div``;
+const Root = styled.div`
+padding-bottom: 50px;
+`;

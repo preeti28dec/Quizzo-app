@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import styled from "styled-components";
 import SkipButton from "../../componets/button/skipButton";
@@ -7,6 +7,7 @@ import { HiUserGroup } from "react-icons/hi";
 import Header from "../header/header";
 import Link from "next/link";
 import { useProgress } from "../../context/context";
+import { BsArrowLeft } from "react-icons/bs";
 const Typedata = [
   {
     id: 1,
@@ -41,12 +42,18 @@ export default function TypeAccount() {
   const { setProgress } = useProgress();
   return (
     <Root>
-      <Header />
+      <Header
+        title={
+          <Link href="/">
+            <BsArrowLeft className="text-2xl" />
+          </Link>
+        }
+      />
       <div className="mx-4 mb-4 mt-8 text-2xl text-center font-bold">
         What type of account do you like to create?🤠
       </div>
       <div className="text-sm font-semibold py-2 text-[#212121] text-center">
-        You can skip it if you're not sure.
+        You can skip it if you are not sure.
       </div>
       <div className="mb-8">
         {Typedata.map((i) => {
@@ -71,8 +78,9 @@ export default function TypeAccount() {
           );
         })}
       </div>
+      <hr className="py-2"/>
       <Link href="/slider" onClick={() => setProgress("50%")}>
-        <SkipButton />
+        <SkipButton title={"Skip"}/>
       </Link>
     </Root>
   );

@@ -5,6 +5,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ['quizzo-app-1b7a.vercel.app'],
+  },
 }
 
 module.exports = nextConfig

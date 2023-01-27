@@ -1,9 +1,8 @@
 "use client";
-import { BsArrowLeft } from "react-icons/bs";
 import { animated, useSpring, config } from "react-spring";
 import styled from "styled-components";
 import { useProgress } from "../../context/context";
-export default function Header() {
+export default function Header(prop) {
   const { progress } = useProgress();
   console.log(progress, "progress");
   const props = useSpring({ width: progress, config: config.slow });
@@ -12,7 +11,7 @@ export default function Header() {
     <Root>
       <div className="px-4 py-8 h-16">
         <div className="flex gap-8 items-center">
-          <BsArrowLeft className="text-2xl" />
+          {prop.title}
           <div className="meter">
             <animated.span style={props} />
           </div>

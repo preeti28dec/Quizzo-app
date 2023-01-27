@@ -1,15 +1,17 @@
-"use client"
-import React, { useState } from "react";
-import Link from "next/link";
-import styled from "styled-components";
-
+"use client";
+import React from "react";
+import Image from "next/image";
+import ItemCard from "../../../componets/card/ItemCard";
 export default function Card({ value }) {
   return (
-    <Root className="border">
+    <ItemCard>
       <div className="relative">
-        <img
+        <Image
           src={value.url}
           alt="loding imag"
+          width={500}
+          height={500}
+          priority={true}
           className="h-36 object-cover w-full"
         />
         <div className="absolute top-[105px] text-sm right-1 bg-[#6949ff] text-white px-2 py-1 rounded-lg">
@@ -19,9 +21,12 @@ export default function Card({ value }) {
           <div className="font-bold text-lg">{value.desc}</div>
           <div className=" flex items-center gap-2 py-2">
             <div>
-              <img
+              <Image
                 src={value.userUrl}
                 alt="loding imag"
+                width={500}
+                height={500}
+                priority={true}
                 className="rounded-full w-[30px] object-cover "
               />
             </div>
@@ -29,14 +34,10 @@ export default function Card({ value }) {
           </div>
         </div>
       </div>
-    </Root>
+    </ItemCard>
   );
 }
-const Root = styled.div`
-  width: 200px;
-  box-shadow: #eeeeee 0px 5px 0px;
-  margin: 25px 0px;
-  border-radius: 20px;
-  font-weight: 600;
-  overflow: hidden;
-`;
+
+
+
+

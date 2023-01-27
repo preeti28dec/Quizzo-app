@@ -5,23 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import GetStarted from "../../componets/button/getStarted";
-const quizTitlw = [
-  {
-    id: 1,
-    url: "./createquiz.svg",
-    title: "Create ,share and play quizzes whenever and wherever you want",
-  },
-  {
-    id: 2,
-    url: "./findquiz.svg",
-    title: "Find fun and interesting quizzes to boost up your knowledge",
-  },
-  {
-    id: 3,
-    url: "./playquiz.svg",
-    title: "Play and take quiz challenges together with your friends.",
-  },
-];
+import Image from "next/image";
+import { CreateQuizTitle } from "../../utils/data";
+
 export default function CreateQuiz() {
   const settings = {
     dots: true,
@@ -32,10 +18,16 @@ export default function CreateQuiz() {
   return (
     <Root>
       <Slider {...settings}>
-        {quizTitlw.map((i) => {
+        {CreateQuizTitle.map((i) => {
           return (
             <div key={i.id}>
-              <img src={i.url} alt="loding image" className="h-[400px]" />
+              <Image
+                src={i.url}
+                className="h-[400px]"
+                alt="loding image"
+                width={500}
+                height={500}
+              />
               <div className="text-title text-2xl font-bold text-center my-4">
                 {i.title}
               </div>

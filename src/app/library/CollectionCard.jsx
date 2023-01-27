@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -13,10 +14,12 @@ export default function CollectionCard({ value }) {
       }}
     >
       <Link href="/image-collection">
-        <img
-          className="rounded-lg w-full h-full object-cover"
+        <Image
           src={value.image}
-          alt="logo"
+          alt="loding imag"
+          className="rounded-lg w-full h-full object-cover"
+          width={100}
+          height={100}
         />
         <div className="absolute -mt-8 text-white font-bold ml-2">
           {value.heading}

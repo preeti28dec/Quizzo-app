@@ -4,56 +4,8 @@ import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
 import Card from "./Card";
 import Link from "next/link";
-const card = [
-  {
-    id: 1,
-    url: "./assest/education.jpg",
-    time: "16 Qs",
-    name: "Education",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image1.jpg",
-  },
-  {
-    id: 2,
-    url: "./assest/car-img.jpg",
-    time: "16 Qs",
-    name: "Game",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image2.jpg",
-  },
-  {
-    id: 3,
-    url: "./assest/hand-puzzle.jpg",
-    time: "16 Qs",
-    name: "Bussiness",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image3.jpg",
-  },
-  {
-    id: 4,
-    url: "./assest/earth-img.jpg",
-    time: "16 Qs",
-    name: "Plants",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image4.jpg",
-  },
-  {
-    id: 5,
-    url: "./assest/piggy-bank.jpg",
-    time: "16 Qs",
-    name: "Finance",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image5.jpg",
-  },
-  {
-    id: 6,
-    url: "./assest/lifestyle.jpg",
-    time: "16 Qs",
-    name: "Lifstyle",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image6.jpg",
-  },
-];
+import { CollectionData } from "../../../utils/data";
+
 export default function Collections() {
   return (
     <Root>
@@ -68,7 +20,7 @@ export default function Collections() {
       </div>
 
       <div className="hs ml-4 full no-scrollbar sm:flex sm:justify-center sm:gap-4 ">
-        {card.map((i) => {
+        {CollectionData.map((i) => {
           return <Card value={i} key={i.id} />;
         })}
       </div>
@@ -99,6 +51,8 @@ const Root = styled.div`
       gap: 10px;
       overflow-x: scroll;
       scroll-snap-type: x proximity;
+      margin-left: -1rem;
+      padding-left: 2rem;
     }
   }
 `;

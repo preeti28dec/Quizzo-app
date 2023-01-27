@@ -6,13 +6,12 @@ export default function MainHeader(props) {
   return (
     <Root>
       {props.title}
-    
     </Root>
   );
 }
 
 const Root = styled.div`
-  padding: 1rem;
+  padding: 20px 16px;
   position: sticky;
   top: 0px;
   background: white;

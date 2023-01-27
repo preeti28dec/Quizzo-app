@@ -1,17 +1,21 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function AuthorsList({ value }) {
+  const [Follow, setFollow] = useState(false);
   return (
-    <Link href="/profile">
-      <Root>
+    <Root>
+      <Link href="/profile">
         <div className="flex gap-2 items-center ">
-          <img
+          <Image
             src={value.url}
             alt="loding imag"
             className="rounded-full w-14 object-cover "
+            width={500}
+            height={500}
           />
           <div className="flex ">
             <div>
@@ -25,17 +29,18 @@ export default function AuthorsList({ value }) {
             ) : null}
           </div>
         </div>
-        <button
-          className={
-            value.userFollow === "Follow"
-              ? "text-sm text-white rounded-full py-2 px-4 bg-[#6949ff]"
-              : "text-sm text-[#6949ff] rounded-full py-2 px-4 border font-bold border-[#6949ff]"
-          }
-        >
-          {value.userFollow}
-        </button>
-      </Root>
-    </Link>
+      </Link>
+      <button
+        onClick={() => setFollow((s) => !s)}
+        className={
+          Follow
+            ? "text-sm text-[#6949ff] rounded-full py-2 px-4 border font-bold border-[#6949ff]"
+            : "text-sm text-white rounded-full py-2 px-4 bg-[#6949ff]"
+        }
+      >
+        {Follow ? "Following" : "Follow"}
+      </button>
+    </Root>
   );
 }
 const Root = styled.div`
@@ -43,5 +48,4 @@ const Root = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 15px 0px;
-
 `;

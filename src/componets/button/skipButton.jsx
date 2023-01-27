@@ -1,18 +1,16 @@
 'use client'
 import React from 'react'
 import styled from "styled-components";
-export default function SkipButton() {
+export default function SkipButton(props) {
   return (
     <Root>
-    <hr className='py-2'/>
       <div className="skipButton">
-        <button>Skip</button>
+        <button>{props.title}</button>
       </div>
     </Root>
   )
 }
 const Root = styled.div`
-/* margin: 30px 0px 0px 50px; */
   .skipButton {
     background-color: var(--lightPurple);
     box-shadow: #c4b7ff 0px 5px 0px;
@@ -22,5 +20,9 @@ const Root = styled.div`
     color: #6949ff;
     text-align: center;
     font-weight: 600;
+    transition: transform 200ms;
+  }
+  .skipButton:hover {
+      transform: scale(1.05);
   }
 `;

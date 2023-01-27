@@ -1,74 +1,26 @@
-"use client"
+"use client";
 import React from "react";
 import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
 import Card from "./Card";
 import Link from "next/link";
-const card = [
-  {
-    id: 1,
-    url: "./assest/calendar.jpg",
-    time:"16 Qs",
-    name: "Titus Kitamura",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image1.jpg",
-  },
-  {
-    id: 2,
-    url: "./assest/idea-hand.jpg",
-    time:"16 Qs",
-    name: "Titus Kitamura",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image2.jpg",
-  },
-  {
-    id: 3,
-    url: "./assest/calendar.jpg",
-    time:"16 Qs",
-    name: "Titus Kitamura",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image3.jpg",
-  },
-  {
-    id: 4,
-    url: "./assest/idea-hand.jpg",
-    time:"16 Qs",
-    name: "Titus Kitamura",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image4.jpg",
-  },
-  {
-    id: 5,
-    url: "./assest/idea-hand.jpg",
-    time:"16 Qs",
-    name: "Titus Kitamura",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image5.jpg",
-  },
-  {
-    id: 6,
-    url: "./assest/idea-hand.jpg",
-    time:"16 Qs",
-    name: "Titus Kitamura",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image6.jpg",
-  },
-];
+import { DiscoverCard } from "../../../utils/data";
+
 export default function Discover() {
   return (
     <Root>
       <div className="flex justify-between items-center px-4">
         <div className="text-2xl font-bold">Discover</div>
-       <Link href="/discover" className="cursor-pointer">
-       <div className="text-[#6949ff] flex items-center gap-3 text-xl font-semibold">
-          <div>View all</div>
-          <BsArrowRight />
-        </div>
-       </Link>
+        <Link href="/discover" className="cursor-pointer">
+          <div className="text-[#6949ff] flex items-center gap-3 text-xl font-semibold">
+            <div>View all</div>
+            <BsArrowRight />
+          </div>
+        </Link>
       </div>
 
-      <div className="hs ml-4 full no-scrollbar sm:flex sm:justify-center sm:gap-4 ">
-        {card.map((i) => {
+      <div className="hs  ml-4 full no-scrollbar sm:flex sm:justify-center sm:gap-4 ">
+        {DiscoverCard.map((i) => {
           return <Card value={i} key={i.id} />;
         })}
       </div>
@@ -88,6 +40,8 @@ const Root = styled.div`
   }
   .hs > li,
   .item {
+    /* margin-left: -1rem;
+    padding-left: 2rem; */
     scroll-snap-align: center;
     display: flex;
     align-items: center;
@@ -99,6 +53,8 @@ const Root = styled.div`
       gap: 10px;
       overflow-x: scroll;
       scroll-snap-type: x proximity;
+      margin-left: -1rem;
+      padding-left: 2rem;
     }
   }
 `;

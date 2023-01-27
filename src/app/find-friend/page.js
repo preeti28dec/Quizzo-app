@@ -13,25 +13,9 @@ import { RiBook2Fill } from "react-icons/ri";
 import styled from "styled-components";
 import { useProgress } from "../../context/context";
 import MainHeader from "../header/mainHeader";
+import Image from "next/image";
+import { FindFriendItem } from "../../utils/data";
 
-const Item = [
-  { image: "../assest/image2.jpg", name: "Maryland winkles", follow: "Follow" },
-  {
-    image: "../assest/image5.jpg",
-    name: "Lauralee Quintero",
-    follow: "Follow",
-  },
-  {
-    image: "../assest/image6.jpg",
-    name: "Alfonzo Schuessler",
-    follow: "Follow",
-  },
-  {
-    image: "../assest/image1.jpg",
-    name: "Akshara Mishra",
-    follow: "Follow",
-  },
-];
 
 function FindFriends() {
   const { setSearch, search } = useProgress();
@@ -118,7 +102,7 @@ function FindFriends() {
         </Link>
       </div>
 
-      {Item.filter((i) => {
+      {FindFriendItem.filter((i) => {
         if (search === "") {
           return i;
         } else if (
@@ -128,9 +112,19 @@ function FindFriends() {
         }
       }).map((i) => {
         return (
-          <div className="flex justify-between items-center mt-4 px-4">
+          <div
+            className="flex justify-between items-center mt-4 px-4"
+            key={i.name}
+          >
             <div className="flex gap-4 items-center">
-              <img className="rounded-full w-14" src={i.image} alt="logo" />
+              <Image
+                src={i.image}
+                className="rounded-full w-14"
+                alt="logo"
+                width={500}
+                height={500}
+              />
+
               <p className="font-bold text-[18px]">{i.name}</p>
             </div>
             <button className="bg-[#6949ff] text-white px-4 py-1 text-sm rounded-full">

@@ -4,56 +4,8 @@ import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
 import Card from "./Card";
 import Link from "next/link";
-const card = [
-  {
-    id: 1,
-    url: "./assest/calendar.jpg",
-    time: "16 Qs",
-    name: "Rayford ",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image1.jpg",
-  },
-  {
-    id: 2,
-    url: "./assest/idea-hand.jpg",
-    time: "16 Qs",
-    name: "Willard ",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image2.jpg",
-  },
-  {
-    id: 3,
-    url: "./assest/calendar.jpg",
-    time: "16 Qs",
-    name: "Hannah ",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image3.jpg",
-  },
-  {
-    id: 4,
-    url: "./assest/idea-hand.jpg",
-    time: "16 Qs",
-    name: "Geiffrey ",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image4.jpg",
-  },
-  {
-    id: 5,
-    url: "./assest/idea-hand.jpg",
-    time: "16 Qs",
-    name: "Titus ",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image5.jpg",
-  },
-  {
-    id: 6,
-    url: "./assest/idea-hand.jpg",
-    time: "16 Qs",
-    name: "Titus ",
-    desc: "Get Smarter With Productivity Quizz...",
-    userUrl: "./assest/image6.jpg",
-  },
-];
+import { AuthorsList } from "../../../utils/data";
+
 export default function Authors() {
   return (
     <Root>
@@ -68,7 +20,7 @@ export default function Authors() {
       </div>
 
       <div className="hs ml-4 full no-scrollbar sm:flex sm:justify-center sm:gap-4 ">
-        {card.map((i) => {
+        {AuthorsList.map((i) => {
           return <Card value={i} key={i.id} />;
         })}
       </div>
@@ -97,6 +49,8 @@ const Root = styled.div`
       gap: 10px;
       overflow-x: scroll;
       scroll-snap-type: x proximity;
+      margin-left: -1rem;
+      padding-left: 2rem;
     }
   }
 `;

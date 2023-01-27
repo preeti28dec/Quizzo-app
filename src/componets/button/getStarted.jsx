@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import React from "react";
 import styled from "styled-components";
-import Link from 'next/link'
+import Link from "next/link";
 export default function GetStarted() {
   return (
     <Root>
@@ -12,9 +12,9 @@ export default function GetStarted() {
         </div>
       </Link>
       <Link href="/login">
-      <div className="haveAccountButton">
-        <button>I ALREADY HAVE AN ACCOUNT</button>
-      </div>
+        <div className="haveAccountButton">
+          <button>I ALREADY HAVE AN ACCOUNT</button>
+        </div>
       </Link>
     </Root>
   );
@@ -27,9 +27,13 @@ const Root = styled.div`
     margin: 25px 20px;
     border-radius: 50px;
     padding: 10px 12px;
-    color: var(--background);
+    color: var(--whiteColor);
     text-align: center;
     font-weight: 600;
+    transition: transform 200ms;
+  }
+  .getButton:hover {
+    transform: scale(1.05);
   }
   .haveAccountButton {
     background-color: var(--lightPurple);
@@ -40,5 +44,9 @@ const Root = styled.div`
     color: #6949ff;
     text-align: center;
     font-weight: 600;
+    transition: transform 200ms;
+  }
+  .haveAccountButton:hover {
+    transform: scale(1.05);
   }
 `;

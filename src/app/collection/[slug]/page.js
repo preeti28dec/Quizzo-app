@@ -10,10 +10,12 @@ import styled from "styled-components";
 import TopicsCard from "./card";
 import { FiSearch } from "react-icons/fi";
 import MainHeader from "../../header/mainHeader";
+import Image from "next/image";
 
 function Topics() {
   const query = useSearchParams();
   const [data, setData] = useState({});
+  console.table(data);
 
   useEffect(() => {
     setData(CollectionData.filter((i) => i.id == query.get("id"))[0]);
@@ -25,7 +27,7 @@ function Topics() {
         title={
           <div className="flex justify-between items-center gap-4 py-2">
             <div className="flex items-center gap-2">
-              <Link href="/home">
+              <Link href="/collection">
                 <div>
                   <BsArrowLeft className="text-2xl" />
                 </div>
@@ -37,7 +39,13 @@ function Topics() {
         }
       />
       <div className="px-4">
-        <img className=" rounded-2xl" src={data?.image} alt="sf" />
+        <Image
+          src={data?.image}
+          alt="loding imag"
+          className="rounded-2xl"
+          width={500}
+          height={500}
+        />
         <div className="flex justify-between mt-4">
           <h1 className="text-2xl font-bold">245 Quizzo</h1>
           <div className="flex gap-2 items-center text-[#6949ff] font-semibold">
@@ -57,6 +65,7 @@ function Topics() {
 
 export default Topics;
 const Topics1 = styled.div`
+padding-bottom: 50px;
   .header {
     padding: 1rem;
     position: sticky;

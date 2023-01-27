@@ -6,17 +6,20 @@ body {
   max-width: 1400px;
   width: 100%;
   margin: auto;
-  font-family:  'Nunito', sans-serif !important;
+  /* padding: 20px; */
+  height: 100vh;
+  font-family: "Nunito", sans-serif !important;
 }
 :root {
   --blueColor: #795cff;
-  --background: white;
-  --foreground: black;
+  --whiteColor: white;
+  --blackColor: black;
   --yellowColor: #ffc106;
   --lightPurple: #f0edff;
 }
 
 [data-theme="dark"] {
-  --background: black;
-  --foreground: white;
+  /* --whiteColor: black; */
+  /* --foreground: white; */
 }
+

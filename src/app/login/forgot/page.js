@@ -184,7 +184,7 @@ const ForgotPage1 = styled.div`
     margin: 40px 20px;
     border-radius: 50px;
     padding: 15px;
-    color: var(--background);
+    color: var(--whiteColor);
     text-align: center;
     font-weight: 600;
   }
